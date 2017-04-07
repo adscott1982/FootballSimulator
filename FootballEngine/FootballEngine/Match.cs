@@ -27,7 +27,7 @@ namespace FootballEngine
 
             while (minutes <= 90)
             {
-                Task.Delay(300).Wait();
+                Task.Delay(50).Wait();
                 Console.Write($"'{minutes} - ");
 
                 isHomePossession = this.DeterminePossession();
@@ -35,7 +35,7 @@ namespace FootballEngine
 
                 Console.Write($"{teamInPossession.Name} have possession... ");
 
-                if (!this.DetermineIsChance())
+                if (!this.DetermineIsChance(isHomePossession))
                 {
                     Console.Write("but they lose the ball.\n");
                     minutes++;
@@ -60,6 +60,8 @@ namespace FootballEngine
 
                 minutes++;
             }
+
+            Console.WriteLine($"{homeTeam.Name} {homeGoals} vs {awayGoals} {awayTeam.Name}\n");
         }
 
         private bool DeterminePossession()
@@ -70,11 +72,21 @@ namespace FootballEngine
             return isHomePossession;
         }
 
-        private bool DetermineIsChance()
+        private bool DetermineIsChance(bool isHomePossession)
         {
-            // Avg 25 shots per match over 90 minutes. 27 % chance of shot per minute
-            var chance = this.random.NextDouble();
-            return chance < 0.27d;
+            var attack = isHomePossession ? this.homeTeam.Attack : this.awayTeam.Attack;
+            var defence = isHomePossession ? this.awayTeam.Defence : this.homeTeam.Defence;
+
+            var totalFractions = attack + defence;
+
+            var result = this.random.Next(1, totalFractions + 1);
+            var isChance = result <= attack ? true : false;
+
+            return isChance;
+
+            //// Avg 25 shots per match over 90 minutes. 27 % chance of shot per minute
+            //var chance = this.random.NextDouble();
+            //return chance < 0.27d;
         }
 
         private bool DetermineIsGoal()
