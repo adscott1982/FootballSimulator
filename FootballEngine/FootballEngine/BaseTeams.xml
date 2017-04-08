@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Teams>
+  <Team>
+    <Name>Chelsea</Name>
+    <Defence>9</Defence>
+    <Midfield>8</Midfield>
+    <Attack>8</Attack>
+  </Team>
+  <Team>
+    <Name>Tottenham Hotspur</Name>
+    <Defence>8</Defence>
+    <Midfield>8</Midfield>
+    <Attack>8</Attack>
+  </Team>
+  <Team>
+    <Name>Liverpool</Name>
+    <Defence>8</Defence>
+    <Midfield>8</Midfield>
+    <Attack>7</Attack>
+  </Team>
+  <Team>
+    <Name>Manchester City</Name>
+    <Defence>7</Defence>
+    <Midfield>8</Midfield>
+    <Attack>9</Attack>
+  </Team>
+  <Team>
+    <Name>Arsenal</Name>
+    <Defence>8</Defence>
+    <Midfield>8</Midfield>
+    <Attack>7</Attack>
+  </Team>
+  <Team>
+    <Name>Manchester United</Name>
+    <Defence>7</Defence>
+    <Midfield>7</Midfield>
+    <Attack>8</Attack>
+  </Team>
+  <Team>
+    <Name>Everton</Name>
+    <Defence>7</Defence>
+    <Midfield>7</Midfield>
+    <Attack>7</Attack>
+  </Team>
+  <Team>
+    <Name>West Brom</Name>
+    <Defence>6</Defence>
+    <Midfield>7</Midfield>
+    <Attack>7</Attack>
+  </Team>
+  <Team>
+    <Name>Southampton</Name>
+    <Defence>7</Defence>
+    <Midfield>7</Midfield>
+    <Attack>7</Attack>
+  </Team>
+  <Team>
+    <Name>Watford</Name>
+    <Defence>7</Defence>
+    <Midfield>7</Midfield>
+    <Attack>6</Attack>
+  </Team>
+  <Team>
+    <Name>Leicester City</Name>
+    <Defence>8</Defence>
+    <Midfield>7</Midfield>
+    <Attack>8</Attack>
+  </Team>
+  <Team>
+    <Name>Burnley</Name>
+    <Defence>7</Defence>
+    <Midfield>7</Midfield>
+    <Attack>6</Attack>
+  </Team>
+  <Team>
+    <Name>Stoke City</Name>
+    <Defence>7</Defence>
+    <Midfield>6</Midfield>
+    <Attack>6</Attack>
+  </Team>
+  <Team>
+    <Name>West Ham</Name>
+    <Defence>6</Defence>
+    <Midfield>6</Midfield>
+    <Attack>7</Attack>
+  </Team>
+  <Team>
+    <Name>Bournemouth</Name>
+    <Defence>7</Defence>
+    <Midfield>7</Midfield>
+    <Attack>7</Attack>
+  </Team>
+  <Team>
+    <Name>Crystal Palace</Name>
+    <Defence>6</Defence>
+    <Midfield>6</Midfield>
+    <Attack>6</Attack>
+  </Team>
+  <Team>
+    <Name>Hull City</Name>
+    <Defence>6</Defence>
+    <Midfield>6</Midfield>
+    <Attack>6</Attack>
+  </Team>
+  <Team>
+    <Name>Swansea City</Name>
+    <Defence>6</Defence>
+    <Midfield>7</Midfield>
+    <Attack>6</Attack>
+  </Team>
+  <Team>
+    <Name>Middlesbrough</Name>
+    <Defence>6</Defence>
+    <Midfield>5</Midfield>
+    <Attack>6</Attack>
+  </Team>
+  <Team>
+    <Name>Sunderland</Name>
+    <Defence>5</Defence>
+    <Midfield>5</Midfield>
+    <Attack>7</Attack>
+  </Team>
+</Teams>

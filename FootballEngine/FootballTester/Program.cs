@@ -9,6 +9,7 @@ namespace FootballTester
         {
             Console.WriteLine("Football Tester\n");
 
+            var teams = XmlDataHandler.LoadTeams("BaseTeams.xml");
             var team1 = new Team("Forest", 4, 5, 5);
             var team2 = new Team("United", 7, 8, 7);
 

@@ -10,6 +10,11 @@
             this.Attack = attack;
         }
 
+        public override string ToString()
+        {
+            return this.Name;
+        }
+
         public string Name { get; }
         public int Defence { get; }
         public int Midfield { get; }
