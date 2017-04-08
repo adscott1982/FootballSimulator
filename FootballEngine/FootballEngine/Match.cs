@@ -5,15 +5,35 @@ namespace FootballEngine
 {
     public class Match
     {
-        private Team homeTeam;
-        private Team awayTeam;
         private Random random;
 
         public Match(Team homeTeam, Team awayTeam)
         {
-            this.homeTeam = homeTeam;
-            this.awayTeam = awayTeam;
+            this.HomeTeam = homeTeam;
+            this.AwayTeam = awayTeam;
             this.random = new Random(DateTime.Now.Millisecond * DateTime.Now.Hour / DateTime.Now.Minute);
+        }
+
+        public Team HomeTeam { get; }
+        public Team AwayTeam { get; }
+
+        public bool ShareTeams(Match otherMatch)
+        {
+            if (
+                this.HomeTeam == otherMatch.HomeTeam
+                || this.HomeTeam == otherMatch.AwayTeam
+                || this.AwayTeam == otherMatch.HomeTeam
+                || this.AwayTeam == otherMatch.AwayTeam)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public override string ToString()
+        {
+            return $"{HomeTeam} vs {AwayTeam}";
         }
 
         public void Play()
@@ -23,7 +43,7 @@ namespace FootballEngine
             var awayGoals = 0;
             var isHomePossession = false;
 
-            Console.WriteLine($"{homeTeam.Name} {homeGoals} vs {awayGoals} {awayTeam.Name}\n");
+            Console.WriteLine($"{HomeTeam.Name} {homeGoals} vs {awayGoals} {AwayTeam.Name}\n");
 
             while (minutes <= 90)
             {
@@ -31,7 +51,7 @@ namespace FootballEngine
                 Console.Write($"'{minutes} - ");
 
                 isHomePossession = this.DeterminePossession();
-                var teamInPossession = isHomePossession ? this.homeTeam : this.awayTeam;
+                var teamInPossession = isHomePossession ? this.HomeTeam : this.AwayTeam;
 
                 Console.Write($"{teamInPossession.Name} have possession... ");
 
@@ -56,26 +76,26 @@ namespace FootballEngine
                 if (isHomePossession) homeGoals++;
                 else awayGoals++;
 
-                Console.WriteLine($"{homeTeam.Name} {homeGoals} vs {awayGoals} {awayTeam.Name}");
+                Console.WriteLine($"{HomeTeam.Name} {homeGoals} vs {awayGoals} {AwayTeam.Name}");
 
                 minutes++;
             }
 
-            Console.WriteLine($"{homeTeam.Name} {homeGoals} vs {awayGoals} {awayTeam.Name}\n");
+            Console.WriteLine($"{HomeTeam.Name} {homeGoals} vs {awayGoals} {AwayTeam.Name}\n");
         }
 
         private bool DeterminePossession()
         {
-            var totalFractions = this.homeTeam.Midfield + this.awayTeam.Midfield;
+            var totalFractions = this.HomeTeam.Midfield + this.AwayTeam.Midfield;
             var result = this.random.Next(1, totalFractions + 1);
-            var isHomePossession = result <= this.homeTeam.Midfield + 1 ? true : false;
+            var isHomePossession = result <= this.HomeTeam.Midfield + 1 ? true : false;
             return isHomePossession;
         }
 
         private bool DetermineIsChance(bool isHomePossession)
         {
-            var attack = isHomePossession ? this.homeTeam.Attack + 1 : this.awayTeam.Attack;
-            var defence = isHomePossession ? this.awayTeam.Defence : this.homeTeam.Defence + 1;
+            var attack = isHomePossession ? this.HomeTeam.Attack + 1 : this.AwayTeam.Attack;
+            var defence = isHomePossession ? this.AwayTeam.Defence : this.HomeTeam.Defence + 1;
 
             var totalFractions = attack + defence;
 
@@ -93,8 +113,8 @@ namespace FootballEngine
 
         private bool DetermineIsGoal(bool isHomePossession)
         {
-            var attack = isHomePossession ? this.homeTeam.Attack + 1 : this.awayTeam.Attack;
-            var defence = isHomePossession ? this.awayTeam.Defence : this.homeTeam.Defence + 1;
+            var attack = isHomePossession ? this.HomeTeam.Attack + 1 : this.AwayTeam.Attack;
+            var defence = isHomePossession ? this.AwayTeam.Defence : this.HomeTeam.Defence + 1;
 
             var totalFractions = attack + defence;
 
