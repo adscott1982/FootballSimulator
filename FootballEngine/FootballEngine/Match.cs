@@ -44,7 +44,7 @@ namespace FootballEngine
 
                 Console.Write("they have a chance... ");
 
-                if (!this.DetermineIsGoal())
+                if (!this.DetermineIsGoal(isHomePossession))
                 {
                     Console.Write("missed!\n");
                     minutes++;
@@ -68,32 +68,46 @@ namespace FootballEngine
         {
             var totalFractions = this.homeTeam.Midfield + this.awayTeam.Midfield;
             var result = this.random.Next(1, totalFractions + 1);
-            var isHomePossession = result <= this.homeTeam.Midfield ? true : false;
+            var isHomePossession = result <= this.homeTeam.Midfield + 1 ? true : false;
             return isHomePossession;
         }
 
         private bool DetermineIsChance(bool isHomePossession)
         {
-            var attack = isHomePossession ? this.homeTeam.Attack : this.awayTeam.Attack;
-            var defence = isHomePossession ? this.awayTeam.Defence : this.homeTeam.Defence;
+            var attack = isHomePossession ? this.homeTeam.Attack + 1 : this.awayTeam.Attack;
+            var defence = isHomePossession ? this.awayTeam.Defence : this.homeTeam.Defence + 1;
 
             var totalFractions = attack + defence;
 
             var result = this.random.Next(1, totalFractions + 1);
-            var isChance = result <= attack ? true : false;
+            var attackBoost = result <= attack ? true : false;
 
-            return isChance;
+            var chanceOfAttack = 0.27d;
+            if (attackBoost) chanceOfAttack += 0.1d;
+            else chanceOfAttack -= 0.1d;
 
-            //// Avg 25 shots per match over 90 minutes. 27 % chance of shot per minute
-            //var chance = this.random.NextDouble();
-            //return chance < 0.27d;
+            // Avg 25 shots per match over 90 minutes. 27 % chance of shot per minute
+            var chance = this.random.NextDouble();
+            return chance < chanceOfAttack;
         }
 
-        private bool DetermineIsGoal()
+        private bool DetermineIsGoal(bool isHomePossession)
         {
+            var attack = isHomePossession ? this.homeTeam.Attack + 1 : this.awayTeam.Attack;
+            var defence = isHomePossession ? this.awayTeam.Defence : this.homeTeam.Defence + 1;
+
+            var totalFractions = attack + defence;
+
+            var result = this.random.Next(1, totalFractions + 1);
+            var attackBoost = result <= attack ? true : false;
+
+            var chanceOfGoal = 0.12d;
+            if (attackBoost) chanceOfGoal += 0.04d;
+            else chanceOfGoal -= 0.04d;
+
             // Avg 11 % chance shot will be a goal
             var chance = this.random.NextDouble();
-            return chance < 0.11d;
+            return chance < chanceOfGoal;
         }
     }
 }
