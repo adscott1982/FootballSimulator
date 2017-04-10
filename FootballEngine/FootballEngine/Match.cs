@@ -7,15 +7,18 @@ namespace FootballEngine
     {
         private Random random;
 
-        public Match(Team homeTeam, Team awayTeam)
+        public Match(Team homeTeam, Team awayTeam, Random random)
         {
             this.HomeTeam = homeTeam;
             this.AwayTeam = awayTeam;
-            this.random = new Random(DateTime.Now.Millisecond * DateTime.Now.Hour / DateTime.Now.Minute);
+            this.random = random;
         }
 
         public Team HomeTeam { get; }
         public Team AwayTeam { get; }
+
+        public int HomeGoals { get; private set; }
+        public int AwayGoals { get; private set; }
 
         public bool ShareTeams(Match otherMatch)
         {
@@ -33,55 +36,40 @@ namespace FootballEngine
 
         public override string ToString()
         {
-            return $"{HomeTeam} vs {AwayTeam}";
+            return $"{HomeTeam} {this.HomeGoals} v {this.AwayGoals} {AwayTeam}";
         }
 
         public void Play()
         {
             var minutes = 0;
-            var homeGoals = 0;
-            var awayGoals = 0;
+            this.HomeGoals = 0;
+            this.AwayGoals = 0;
             var isHomePossession = false;
-
-            Console.WriteLine($"{HomeTeam.Name} {homeGoals} vs {awayGoals} {AwayTeam.Name}\n");
 
             while (minutes <= 90)
             {
-                Task.Delay(50).Wait();
-                Console.Write($"'{minutes} - ");
-
                 isHomePossession = this.DeterminePossession();
                 var teamInPossession = isHomePossession ? this.HomeTeam : this.AwayTeam;
 
-                Console.Write($"{teamInPossession.Name} have possession... ");
-
                 if (!this.DetermineIsChance(isHomePossession))
                 {
-                    Console.Write("but they lose the ball.\n");
                     minutes++;
                     continue;
                 }
-
-                Console.Write("they have a chance... ");
 
                 if (!this.DetermineIsGoal(isHomePossession))
                 {
-                    Console.Write("missed!\n");
                     minutes++;
                     continue;
                 }
 
-                Console.Write("GOAL!\n");
-
-                if (isHomePossession) homeGoals++;
-                else awayGoals++;
-
-                Console.WriteLine($"{HomeTeam.Name} {homeGoals} vs {awayGoals} {AwayTeam.Name}");
-
+                if (isHomePossession) this.HomeGoals++;
+                else this.AwayGoals++;
                 minutes++;
             }
 
-            Console.WriteLine($"{HomeTeam.Name} {homeGoals} vs {awayGoals} {AwayTeam.Name}\n");
+            this.HomeTeam.AssignResult(this.HomeGoals, this.AwayGoals);
+            this.AwayTeam.AssignResult(this.AwayGoals, this.HomeGoals);
         }
 
         private bool DeterminePossession()

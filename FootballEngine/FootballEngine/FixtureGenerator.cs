@@ -7,17 +7,17 @@ namespace FootballEngine
 {
     public static class FixtureGenerator
     {
-        public static List<MatchDay> GenerateFixtures (List<Team> teams, bool homeAndAway)
+        public static List<MatchDay> GenerateFixtures (List<Team> teams, bool homeAndAway, Random random)
         {
             // Shuffle the list of teams
-            teams = teams.Shuffle(new Random(DateTime.Now.Millisecond * DateTime.Now.Month)).ToList();
+            teams = teams.Shuffle(random).ToList();
 
-            var matchDays = GetFixtures(teams, true);
+            var matchDays = GetFixtures(teams, true, random);
 
             return matchDays;
         }
 
-        public static List<MatchDay> GetFixtures(List<Team> teams, bool homeAndAway)
+        public static List<MatchDay> GetFixtures(List<Team> teams, bool homeAndAway, Random random)
         {
             var teamCount = teams.Count;
             int totalMatchDays = teamCount - 1;
@@ -38,11 +38,11 @@ namespace FootballEngine
                         away = teamCount - 1;
                     }
 
-                    var matchObject = new Match(teams[home], teams[away]);
+                    var matchObject = new Match(teams[home], teams[away], random);
                     matches.Add(matchObject);
                 }
 
-                matchDays.Add(new MatchDay(matches));
+                matchDays.Add(new MatchDay(matchDay + 1, matches));
             }
 
             if (homeAndAway)
@@ -58,10 +58,10 @@ namespace FootballEngine
                         var homeTeam = originalMatch.AwayTeam;
                         var awayTeam = originalMatch.HomeTeam;
 
-                        reverseMatches.Add(new Match(homeTeam, awayTeam));
+                        reverseMatches.Add(new Match(homeTeam, awayTeam, random));
                     }
 
-                    reverseMatchDays.Add(new MatchDay(reverseMatches));
+                    reverseMatchDays.Add(new MatchDay(matchDay.Number + matchDays.Count, reverseMatches));
                 }
 
                 matchDays.AddRange(reverseMatchDays);

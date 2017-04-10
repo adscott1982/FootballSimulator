@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FixtureGenerator.cs" />
+    <Compile Include="League.cs" />
     <Compile Include="Match.cs" />
     <Compile Include="MatchDay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
