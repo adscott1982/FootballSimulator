@@ -15,10 +15,23 @@
             this.GoalsScored += goalsScored;
             this.GoalsConceded += goalsConceded;
 
-            var points = 0;
+            int points;
 
-            if (goalsScored > goalsConceded) points = 3;
-            else if (goalsScored == goalsConceded) points = 1;
+            if (goalsScored > goalsConceded)
+            {
+                points = 3;
+                this.GamesWon++;
+            }
+            else if (goalsScored == goalsConceded)
+            {
+                points = 1;
+                this.GamesDrawn++;
+            }
+            else
+            {
+                points = 0;
+                this.GamesLost++;
+            }
 
             this.Points += points;
 
@@ -36,6 +49,9 @@
         public int Attack { get; }
 
         public int GamesPlayed { get; private set; }
+        public int GamesWon { get; private set; }
+        public int GamesDrawn { get; private set; }
+        public int GamesLost { get; private set; }
         public int GoalsScored { get; private set; }
         public int GoalsConceded { get; private set; }
         public int GoalDifference

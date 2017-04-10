@@ -29,14 +29,13 @@ namespace FootballEngine
         {
             var result = $"{this.Name} Table\n\n";
 
-            var header = "Team\t\t\t\tPld\tGS\tGC\tGD\tPts\n";
-            header += $"----\t\t\t--\t--\t--\t---\n";
+            var header = $"{"Team",-20}{"Pld",6}{"W",6}{"D",6}{"L",6}{"F",6}{"A",6}{"D",6}{"Pts",6}\n";
 
             result += header;
 
             foreach(var team in this.Table)
             {
-                result += $"{team.Name}\t\t\t{team.GamesPlayed}\t{team.GoalsScored}\t{team.GoalsConceded}\t{team.GoalDifference}\t{team.Points}\n";
+                result += $"{team.Name,-20}{team.GamesPlayed,6}{team.GamesWon,6}{team.GamesDrawn,6}{team.GamesLost,6}{team.GoalsScored,6}{team.GoalsConceded,6}{team.GoalDifference,6}{team.Points,6}\n";
             }
 
             return result;
