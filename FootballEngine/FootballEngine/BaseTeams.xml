@@ -3,24 +3,24 @@
   <Team>
     <Name>Chelsea</Name>
     <Defence>9</Defence>
-    <Midfield>8</Midfield>
+    <Midfield>9</Midfield>
     <Attack>8</Attack>
   </Team>
   <Team>
     <Name>Tottenham Hotspur</Name>
     <Defence>8</Defence>
-    <Midfield>8</Midfield>
+    <Midfield>9</Midfield>
     <Attack>8</Attack>
   </Team>
   <Team>
     <Name>Liverpool</Name>
     <Defence>8</Defence>
-    <Midfield>8</Midfield>
+    <Midfield>9</Midfield>
     <Attack>7</Attack>
   </Team>
   <Team>
     <Name>Manchester City</Name>
-    <Defence>7</Defence>
+    <Defence>8</Defence>
     <Midfield>8</Midfield>
     <Attack>9</Attack>
   </Team>
@@ -32,7 +32,7 @@
   </Team>
   <Team>
     <Name>Manchester United</Name>
-    <Defence>7</Defence>
+    <Defence>8</Defence>
     <Midfield>7</Midfield>
     <Attack>8</Attack>
   </Team>
@@ -118,6 +118,6 @@
     <Name>Sunderland</Name>
     <Defence>5</Defence>
     <Midfield>5</Midfield>
-    <Attack>7</Attack>
+    <Attack>5</Attack>
   </Team>
 </Teams>

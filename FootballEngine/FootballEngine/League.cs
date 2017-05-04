@@ -29,7 +29,7 @@ namespace FootballEngine
         {
             var result = $"{this.Name} Table\n\n";
 
-            var header = $"{"Team",-20}{"Pld",6}{"W",6}{"D",6}{"L",6}{"F",6}{"A",6}{"D",6}{"Pts",6}\n";
+            var header = $"{"Team",-20}{"Pld",6}{"W",6}{"D",6}{"L",6}{"F",6}{"A",6}{"GD",6}{"Pts",6}\n";
 
             result += header;
 

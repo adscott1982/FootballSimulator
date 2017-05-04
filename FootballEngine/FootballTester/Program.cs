@@ -16,21 +16,21 @@ namespace FootballTester
 
             foreach(var matchDay in matchDays)
             {
-                //// League table before matchday
-                //Console.WriteLine(league);
-                //Console.ReadKey();
-                //Console.Clear();
+                // League table before matchday
+                Console.WriteLine(league);
+                Console.ReadKey();
+                Console.Clear();
 
                 // Matchday fixtures
-                //Console.WriteLine(matchDay);
+                Console.WriteLine(matchDay);
                 PlayMatchDay(matchDay);
-                //Console.ReadKey();
-                //Console.Clear();
+                Console.ReadKey();
+                Console.Clear();
 
                 //// Matchday results
-                //Console.WriteLine(matchDay);
-                //Console.ReadKey();
-                //Console.Clear();
+                Console.WriteLine(matchDay);
+                Console.ReadKey();
+                Console.Clear();
             }
 
             // final league table
