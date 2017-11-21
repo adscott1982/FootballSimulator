@@ -1,11 +1,22 @@
-﻿using FootballEngine;
-using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Program.cs" company="Andrew Scott">
+//   Andrew Scott
+// </copyright>
+// <summary>
+//   The program class for the application.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace FootballTester
 {
-    class Program
+    using System;
+    using FootballEngine;
+
+    /// <summary>The program class for the application.</summary>
+    internal class Program
     {
-        static void Main(string[] args)
+        /// <summary>The main.</summary>
+        private static void Main()
         {
             Console.WriteLine("Football Tester\n");
 
@@ -14,7 +25,7 @@ namespace FootballTester
             var league = new League("Premiership", teams);
             var matchDays = FixtureGenerator.GenerateFixtures(teams, true, random);
 
-            foreach(var matchDay in matchDays)
+            foreach (var matchDay in matchDays)
             {
                 // League table before matchday
                 Console.WriteLine(league);
@@ -39,9 +50,11 @@ namespace FootballTester
             Console.Clear();
         }
 
-        static void PlayMatchDay(MatchDay matchDay)
+        /// <summary>Play a match day.</summary>
+        /// <param name="matchDay">The match day.</param>
+        private static void PlayMatchDay(MatchDay matchDay)
         {
-            foreach(var match in matchDay.Matches)
+            foreach (var match in matchDay.Matches)
             {
                 match.Play();
             }
