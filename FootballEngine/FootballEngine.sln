@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballEngine", "FootballE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballTester", "FootballTester\FootballTester.csproj", "{23148ADE-BF0D-467A-BB52-C09FC753AC5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndyTools", "..\..\Mp3Trimmer\AndyTools\AndyTools.csproj", "{9DDF3FAD-ADF7-4460-8D4F-025BC25F0386}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndyTools", "AndyTools\AndyTools.csproj", "{9DDF3FAD-ADF7-4460-8D4F-025BC25F0386}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +30,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9057C24B-CE65-4920-920A-8007AB20AC80}
 	EndGlobalSection
 EndGlobal

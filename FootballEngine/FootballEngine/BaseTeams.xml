@@ -2,122 +2,122 @@
 <Teams>
   <Team>
     <Name>Chelsea</Name>
-    <Defence>9</Defence>
-    <Midfield>9</Midfield>
-    <Attack>8</Attack>
+    <Defence>80</Defence>
+    <Midfield>85</Midfield>
+    <Attack>75</Attack>
   </Team>
   <Team>
     <Name>Tottenham Hotspur</Name>
-    <Defence>8</Defence>
-    <Midfield>9</Midfield>
-    <Attack>8</Attack>
+    <Defence>70</Defence>
+    <Midfield>75</Midfield>
+    <Attack>85</Attack>
   </Team>
   <Team>
     <Name>Liverpool</Name>
-    <Defence>8</Defence>
-    <Midfield>9</Midfield>
-    <Attack>7</Attack>
+    <Defence>70</Defence>
+    <Midfield>70</Midfield>
+    <Attack>80</Attack>
   </Team>
   <Team>
     <Name>Manchester City</Name>
-    <Defence>8</Defence>
-    <Midfield>8</Midfield>
-    <Attack>9</Attack>
+    <Defence>85</Defence>
+    <Midfield>90</Midfield>
+    <Attack>95</Attack>
   </Team>
   <Team>
     <Name>Arsenal</Name>
-    <Defence>8</Defence>
-    <Midfield>8</Midfield>
-    <Attack>7</Attack>
+    <Defence>65</Defence>
+    <Midfield>65</Midfield>
+    <Attack>70</Attack>
   </Team>
   <Team>
     <Name>Manchester United</Name>
-    <Defence>8</Defence>
-    <Midfield>7</Midfield>
-    <Attack>8</Attack>
+    <Defence>80</Defence>
+    <Midfield>80</Midfield>
+    <Attack>75</Attack>
   </Team>
   <Team>
     <Name>Everton</Name>
-    <Defence>7</Defence>
-    <Midfield>7</Midfield>
-    <Attack>7</Attack>
+    <Defence>55</Defence>
+    <Midfield>60</Midfield>
+    <Attack>60</Attack>
   </Team>
   <Team>
     <Name>West Brom</Name>
-    <Defence>6</Defence>
-    <Midfield>7</Midfield>
-    <Attack>7</Attack>
+    <Defence>45</Defence>
+    <Midfield>50</Midfield>
+    <Attack>50</Attack>
   </Team>
   <Team>
     <Name>Southampton</Name>
-    <Defence>7</Defence>
-    <Midfield>7</Midfield>
-    <Attack>7</Attack>
+    <Defence>50</Defence>
+    <Midfield>50</Midfield>
+    <Attack>60</Attack>
   </Team>
   <Team>
     <Name>Watford</Name>
-    <Defence>7</Defence>
-    <Midfield>7</Midfield>
-    <Attack>6</Attack>
+    <Defence>45</Defence>
+    <Midfield>55</Midfield>
+    <Attack>55</Attack>
   </Team>
   <Team>
     <Name>Leicester City</Name>
-    <Defence>8</Defence>
-    <Midfield>7</Midfield>
-    <Attack>8</Attack>
+    <Defence>60</Defence>
+    <Midfield>55</Midfield>
+    <Attack>65</Attack>
   </Team>
   <Team>
     <Name>Burnley</Name>
-    <Defence>7</Defence>
-    <Midfield>7</Midfield>
-    <Attack>6</Attack>
+    <Defence>70</Defence>
+    <Midfield>60</Midfield>
+    <Attack>55</Attack>
   </Team>
   <Team>
     <Name>Stoke City</Name>
-    <Defence>7</Defence>
-    <Midfield>6</Midfield>
-    <Attack>6</Attack>
+    <Defence>45</Defence>
+    <Midfield>50</Midfield>
+    <Attack>40</Attack>
   </Team>
   <Team>
     <Name>West Ham</Name>
-    <Defence>6</Defence>
-    <Midfield>6</Midfield>
-    <Attack>7</Attack>
+    <Defence>50</Defence>
+    <Midfield>55</Midfield>
+    <Attack>55</Attack>
   </Team>
   <Team>
     <Name>Bournemouth</Name>
-    <Defence>7</Defence>
-    <Midfield>7</Midfield>
-    <Attack>7</Attack>
+    <Defence>60</Defence>
+    <Midfield>55</Midfield>
+    <Attack>60</Attack>
   </Team>
   <Team>
     <Name>Crystal Palace</Name>
-    <Defence>6</Defence>
-    <Midfield>6</Midfield>
-    <Attack>6</Attack>
+    <Defence>45</Defence>
+    <Midfield>50</Midfield>
+    <Attack>60</Attack>
   </Team>
   <Team>
     <Name>Hull City</Name>
-    <Defence>6</Defence>
-    <Midfield>6</Midfield>
-    <Attack>6</Attack>
+    <Defence>40</Defence>
+    <Midfield>50</Midfield>
+    <Attack>45</Attack>
   </Team>
   <Team>
     <Name>Swansea City</Name>
-    <Defence>6</Defence>
-    <Midfield>7</Midfield>
-    <Attack>6</Attack>
+    <Defence>45</Defence>
+    <Midfield>50</Midfield>
+    <Attack>50</Attack>
   </Team>
   <Team>
     <Name>Middlesbrough</Name>
-    <Defence>6</Defence>
-    <Midfield>5</Midfield>
-    <Attack>6</Attack>
+    <Defence>45</Defence>
+    <Midfield>40</Midfield>
+    <Attack>40</Attack>
   </Team>
   <Team>
     <Name>Sunderland</Name>
-    <Defence>5</Defence>
-    <Midfield>5</Midfield>
-    <Attack>5</Attack>
+    <Defence>35</Defence>
+    <Midfield>40</Midfield>
+    <Attack>40</Attack>
   </Team>
 </Teams>

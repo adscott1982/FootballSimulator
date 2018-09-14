@@ -17,6 +17,8 @@ namespace FootballEngine
         /// <summary>Random object for generating random numbers.</summary>
         private readonly Random random;
 
+        private readonly int homeTeamBias = 20;
+
         /// <summary>Initializes a new instance of the <see cref="Match"/> class.</summary>
         /// <param name="homeTeam">The home team.</param>
         /// <param name="awayTeam">The away team.</param>
@@ -92,7 +94,7 @@ namespace FootballEngine
         {
             var totalFractions = this.HomeTeam.Midfield + this.AwayTeam.Midfield;
             var result = this.random.Next(1, totalFractions + 1);
-            var isHomePossession = result <= this.HomeTeam.Midfield + 1;
+            var isHomePossession = result <= this.HomeTeam.Midfield + this.homeTeamBias;
 
             return isHomePossession;
         }
@@ -103,8 +105,8 @@ namespace FootballEngine
         private bool DetermineIsChance(bool isHomePossession)
         {
             // Give the home team a bonus to their stats for attack if attacking, defence if defending
-            var attack = isHomePossession ? this.HomeTeam.Attack + 1 : this.AwayTeam.Attack;
-            var defence = isHomePossession ? this.AwayTeam.Defence : this.HomeTeam.Defence + 1;
+            var attack = isHomePossession ? this.HomeTeam.Attack + this.homeTeamBias : this.AwayTeam.Attack;
+            var defence = isHomePossession ? this.AwayTeam.Defence : this.HomeTeam.Defence + this.homeTeamBias;
 
             // The combined values for attack and defence in the current chance calculation
             var totalFractions = attack + defence;
@@ -128,8 +130,8 @@ namespace FootballEngine
         private bool DetermineIsGoal(bool isHomePossession)
         {
             // Give a boost to the home team if attacking or defending
-            var attack = isHomePossession ? this.HomeTeam.Attack + 1 : this.AwayTeam.Attack;
-            var defence = isHomePossession ? this.AwayTeam.Defence : this.HomeTeam.Defence + 1;
+            var attack = isHomePossession ? this.HomeTeam.Attack + this.homeTeamBias : this.AwayTeam.Attack;
+            var defence = isHomePossession ? this.AwayTeam.Defence : this.HomeTeam.Defence + this.homeTeamBias;
 
             // The combined values for attack and defence in the current goal calculation
             var totalFractions = attack + defence;
